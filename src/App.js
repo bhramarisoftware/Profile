@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       {/* <Paymentpage></Paymentpage> */}
       {/* <Preview></Preview> */}
-      <Planview></Planview>
+      <Planview></Planview> 
  </div>
   );
 }
