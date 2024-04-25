@@ -1,10 +1,12 @@
 import { Button, Divider, Grid } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import Navbar from "../Pages/Navbar";
 function Planview() {
-    return (
-        <div className="planview" style={{ width: '100%', maxWidth: "1440px", boxSizing: 'border-box' }}>
-            <div style={{ padding: '37px 22px 37px 22px', width: '1107px', boxSizing: 'border-box',background: 'linear-gradient(90deg, rgba(35, 136, 255, 0.95) 0.61%, rgba(143, 87, 214, 0.95) 100%)' }}>
+    return (<>
+    
+        <div className="planview" style={{  maxWidth: "1440px", boxSizing: 'border-box' }}>
+            <div style={{ padding: '37px 22px 37px 22px', width: '1107px', boxSizing: 'border-box',background: 'linear-gradient(90deg, rgba(35, 136, 255, 0.95) 0.61%, rgba(143, 87, 214, 0.95) 100%)',borderRadius:'20px' }}>
 
 
                 <div style={{ display: 'flex', alignItems: "center", justifyContent: 'space-between', marginTop: '30px' }}><span style={{ fontSize: '26px', fontWeight: '600',color:"white" }}>Choose your plan</span> <span><CloseIcon style={{color:'white'}} fontSize="large"/></span></div>
@@ -50,7 +52,7 @@ function Planview() {
                 </div>
             </div>
 
-        </div>
+        </div></>
     );
 }
 

@@ -14,7 +14,8 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 
-import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded'; const currencies = [
+import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
+ const currencies = [
     {
         value: 'USD',
 
@@ -35,12 +36,13 @@ function Paymentpage() {
     const [companycheck,setcompanycheck]=useState(false)
 
     return (
-        <div className="main" style={{ width: '100%', maxWidth: '1440px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '43px 62px 43px 62px', boxSizing: 'border-box',boxShadow:' 0px 6px 12px 0px #0000001A',    }}>
+        <div className="main" style={{ background:'white', maxWidth: '1440px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '43px 62px 43px 62px', boxSizing: 'border-box',boxShadow:' 0px 6px 12px 0px #0000001A',    }}>
             <div className="inner" style={{ width: '100%', display: 'flex', alignItems: 'flex-start' }}><div className="left" style={{ width: "362px" }}>
                 <Grid container xs={12} rowGap={3}>
                     <Grid xs={12} style={{ fontSize: '16px', fontWeight: '600' }}>Billing information</Grid>
                     <Grid xs={12}>
-                        <TextField fullWidth
+                        <TextField
+                         fullWidth
                             id="outlined-select-currency"
                             select
                             label="Country"
