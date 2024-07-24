@@ -12,10 +12,14 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import Input from '@mui/joy/Input';
 import p2 from ".././images/modi.png"
 import "./Nav.css"
-import logo from "../images/logo.svg"
+import logo from "../images/logo.png.png"
 import logoname from "../images/PROFILE.svg"
 import { NavLink, useNavigate } from 'react-router-dom';
-function Navbar({btnname="Download & Print",nav='/admin'}) {
+import Admin from "./Admin/Json/Admin.json"
+import virat from './Admin/Json/virat.json'
+
+
+function Navbar({btnname="Download & Print",nav='/admin',setAdminData=null}) {
     const navigate=useNavigate()
     const [click, Setclick] = React.useState(false)
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -38,14 +42,31 @@ function Navbar({btnname="Download & Print",nav='/admin'}) {
         justifyContent: 'center',
     }));
 
+    const [searchInput, setSearchInput] = React.useState('modi');
+
+    const handleSearch = () => {
+        console.log(searchInput.toLowerCase())
+       if(setAdminData!=null){
+        if (searchInput.toLowerCase() == 'modi') {
+            
+            setAdminData(Admin);
+        } else if (searchInput.toLowerCase() == 'virat') {
+            setAdminData(virat);
+        } else {
+            setAdminData(Admin);
+        }
+       }
+      };
+
 
     return (
         <div style={{ backgroundColor: 'white', height: '71px', position: "static", display: 'flex', alignItems: 'center',justifyContent:'center',width:'100%' }} >
             <div className="navmain" style={{ display: 'flex', alignItems: 'center', justifyContent: "space-between", Margin: '0px 22px', margin: '0px 45px', width: '100%',maxWidth:'1440px' }}>
-                <div ><img style={{ width: '22px' }} src={logo} alt="logo" /> <img src={logoname} alt="PROFILE" /> </div>
+                <div ><img width={'164px'} height={'37px'} src={logo} alt="logo" />  </div>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-evenly' }}><div color='black' style={{ fontSize: '16px', margin: '0 20px' }}>service</div>
-                    <div><Input placeholder=' search'
-                        endDecorator={<SearchOutlinedIcon style={{ color: 'blue' }} fontSize='small' />}
+
+                <div><Input placeholder=' Search'
+                        endDecorator={<SearchOutlinedIcon onClick={handleSearch} style={{ color: 'blue' }} fontSize='small' />}
                         sx={{
                             "--Input-radius": "24px",
                             "--Input-minHeight": "30px",
@@ -54,7 +75,15 @@ function Navbar({btnname="Download & Print",nav='/admin'}) {
                             "--Input-focusedThickness": "1px",
                             "--Input-placeholderOpacity": 0.5
                         }}
-                    /></div>
+                        value={searchInput}
+                        onChange={(e) => setSearchInput(e.target.value)}
+                        onKeyPress={(e) => {
+                          if (e.key === 'Enter') {
+                            handleSearch();
+                          }
+                        }}
+                    /></div>   
+     
 
 
                     <div className='btn' style={{padding:'3px', margin: '0 20px',borderRadius: '110px',}}><button  style={{border:'0px',

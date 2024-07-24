@@ -6,8 +6,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { Divider, Modal } from '@mui/material';
-import logo from "../../images/logo.svg"
-import logoname from "../../images/PROFILE.svg"
+import logo from "../../images/logo.png.png"
 import { NavLink, useNavigate } from 'react-router-dom';
 import Singup from '../Singup/Singup';
 import LoginFind from './LoginFind';
@@ -30,11 +29,11 @@ export default function Login({ LoginOpen, setLoginOpen, setSingup, singup ,Find
       <Modal sx={{display:'flex',alignItems:'center',justifyContent:'center',height:'100%'}} open={LoginOpen} onClose={() => {
         setLoginOpen(false)
       }} >
-        <Grid container component="main" justifyContent={'center'} sx={{ width: '700px', padding: '60px 135px 60px 135px', bgcolor: 'white', boxShadow: "0px 6px 12px 0px #0000001A", borderRadius: '15px' }}>
+        <Grid container component="main" justifyContent={'center'} sx={{height:'633px', width: '700px', padding: '60px 135px 60px 135px', bgcolor: 'white', boxShadow: "0px 6px 12px 0px #0000001A", borderRadius: '15px' }}>
 
           <Box
             sx={{
-              my: 8,
+              my: 6,
               mx: 4,
               display: 'flex',
               flexDirection: 'column',
@@ -44,8 +43,8 @@ export default function Login({ LoginOpen, setLoginOpen, setSingup, singup ,Find
           >
 
 
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
-              <div><img src={logo} alt="" style={{ marginRight: '10px' }} /><img src={logoname} alt="" /></div>
+            <Box component="form" noValidate onSubmit={handleSubmit} >
+              <div><img src={logo} width={'164px'} height={'37px'} alt="logo" style={{ marginRight: '10px' }} /></div>
               <h2>Welcome back!</h2>
               <Typography style={{ fontSize: '14px', fontWeight: '400', margin: '8px 0px' }}>
                 Please login to access your account.            </Typography>

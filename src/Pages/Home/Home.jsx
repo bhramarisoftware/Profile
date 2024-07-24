@@ -1,11 +1,8 @@
 
-
-
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import modi from "../../images/image 20.png"
 import { Accordion, AccordionDetails, AccordionSummary, Box, Button, Divider, Grid, ImageList, ImageListItem, Paper, Stack, Typography } from "@mui/material"
-import logo from "../../images/logo.svg"
-import logoname from "../../images/PROFILE.svg"
+import logo from "../../images/logo.png.png"
 import { Input } from '@mui/joy';
 import Cardcomponent from '../../components/Cards/Card';
 import "./Hoe.css"
@@ -13,7 +10,6 @@ import NewCard from '../../components/Cards/NewsCard';
 import Login from '../LoginTemplates/Login';
 import { useState } from 'react';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
 
 const images = [
     'https://via.placeholder.com/150',
@@ -30,7 +26,7 @@ const images = [
 const Home = () => {
     const [LoginOpen, setLoginOpen] = useState(false)
     const [singup, setSingup] = useState(false)
-    const [Findacc,setFindacc]=useState(false)
+    const [Findacc, setFindacc] = useState(false)
 
     const [expanded1, setExpanded1] = useState(false);
     const [expanded2, setExpanded2] = useState(false);
@@ -86,9 +82,10 @@ const Home = () => {
         }} ><Login/></div>:''
 } */}
         {/* homenavbar */}
+        {/* <CancelBid></CancelBid> */}
         <div style={{ display: 'flex', alignItems: 'center', width: '100%', justifyContent: 'center', backgroundColor: '#E7F5FE' }}>
             <div style={{ width: '100%', height: '55px', display: "flex", alignItems: "center", justifyContent: 'space-between', maxWidth: '1440px', margin: '0 45px', backgroundColor: '#E7F5FE' }}>
-                <div><img src={logo} alt="" /><img src={logoname} alt="" /></div>
+                <div><img src={logo} width={'164px'} height={'37px'} alt="logo" /></div>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', minWidth: '260px' }}><div color='black' style={{ fontSize: '16px' }}>service</div>
                     <div>< NotificationsNoneIcon fontSize='large' /></div>
                     <div><Button variant='contained' sx={{ display: 'flex', alignItems: 'center', textTransform: 'none' }} onClick={handelLogin}>Login / Sign Up</Button></div></div>

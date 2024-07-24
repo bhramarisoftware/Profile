@@ -6,7 +6,7 @@ import Planview from './Planview/Planview';
 import AboutMEEdit from './aboutmeedit/AboutMeEdit';
 import AddAchivement from './AddAchivement/AddAchivement';
 import AddOverview from './Pages/AddOverview/AddOverview';
-import Admin from './Pages/Admin/Admin';
+import Admin from './Pages/Admin/Admin.jsx';
 import Footer from './Pages/Footer';
 import Home from './Pages/Home/Home';
 import Login from './Pages/LoginTemplates/Login';
@@ -16,11 +16,11 @@ import Payment from './Pages/PaymemtSuccess/PaymentSuccess';
 import Singup from './Pages/Singup/Singup';
 import "./common.css"
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Newcomp from './Newcomp.jsx';
 
 function App() {
   return (<BrowserRouter>
     {/* // <div className="App"> */}
-     
       {/* <Payment></Payment> */}
      {/* <Login></Login> */}
      {/* <LoginFind/> */}
@@ -29,7 +29,7 @@ function App() {
     {/* //  <Home></Home>  */}
      {/* <AddOverview></AddOverview> */}
   
-    
+ 
       {/* <Paymentpage></Paymentpage> */}
    {/* <Preview></Preview> */}
        {/*   <Planview></Planview>
@@ -39,11 +39,13 @@ function App() {
 
 
 <Routes>
+{/* <Route path="/" element={<Newcomp></Newcomp>}></Route> */}
+
   <Route path="/" element={<Home></Home>}></Route>
 
-    <Route path="/admin" element={<Admin />} />
+    <Route path="/admin/" element={<Admin />} />
     <Route path="/preview" element={<Preview></Preview>} />
-    {/* <Route path="contact" element={<Contact />} /> */}
+    <Route path="/payment" element={<Paymentpage></Paymentpage>} />
     {/* <Route path="*" element={<NoPage />} /> */}
   
 </Routes>
@@ -53,3 +55,15 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+

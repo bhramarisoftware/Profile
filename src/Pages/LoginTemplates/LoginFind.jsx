@@ -6,8 +6,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { Divider, Modal } from '@mui/material';
-import logo from "../../images/logo.svg"
-import logoname from "../../images/PROFILE.svg"
+import logo from "../../images/logo.png.png"
 
 
 // TODO remove, this demo shouldn't need to reset the theme.
@@ -40,7 +39,7 @@ export default function LoginFind({Findacc,setFindacc}) {
             
            
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
-            <div><img src={logo} alt=""  style={{marginRight:'10px'}}/><img src={logoname} alt="" /></div>
+            <div><img src={logo} alt="logo" width={'164px'} height={'37px'} style={{marginRight:'10px'}}/></div>
                 <h2>Find your account</h2>
             <Typography style={{fontSize:'14px',fontWeight:'400',margin:'8px 0px'}}>
             Enter your recovery email       </Typography>

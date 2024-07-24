@@ -15,7 +15,8 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 
 import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
- const currencies = [
+import Navbar from '../Pages/Navbar';
+const currencies = [
     {
         value: 'USD',
 
@@ -33,16 +34,16 @@ import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
 function Paymentpage() {
     const [razoroay, setrazoroay] = useState(false)
     const [paypal, setpaypal] = useState(false)
-    const [companycheck,setcompanycheck]=useState(false)
+    const [companycheck, setcompanycheck] = useState(false)
 
-    return (
-        <div className="main" style={{ background:'white', maxWidth: '1440px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '43px 62px 43px 62px', boxSizing: 'border-box',boxShadow:' 0px 6px 12px 0px #0000001A',    }}>
-            <div className="inner" style={{ width: '100%', display: 'flex', alignItems: 'flex-start' }}><div className="left" style={{ width: "362px" }}>
+    return (<> <Navbar nav={"/preview"}></Navbar>
+        <div className="main" style={{  display: 'flex', alignItems: 'flex-Start', justifyContent: 'center', padding: '43px 62px 43px 62px',minHeight:'84.5vh',width:'100%' }}>
+            <div className="inner" style={{backgroundColor:'white', borderRadius:'12px',boxSizing: 'border-box', boxShadow: ' 0px 6px 12px 0px #0000001A',padding:'25px', width: '100%', display: 'flex', alignItems: 'flex-start',maxWidth: '1440px', }}><div className="left" style={{ width: "362px" }}>
                 <Grid container xs={12} rowGap={3}>
                     <Grid xs={12} style={{ fontSize: '16px', fontWeight: '600' }}>Billing information</Grid>
                     <Grid xs={12}>
                         <TextField
-                         fullWidth
+                            fullWidth
                             id="outlined-select-currency"
                             select
                             label="Country"
@@ -69,30 +70,30 @@ function Paymentpage() {
                     </TextField></Grid>
                     <Grid xs={12}><TextField fullWidth id="outlined-basic" label="Name" placeholder='Name text' variant="outlined" />
                     </Grid>
-                    <Grid xs={12}>  <FormControlLabel control={<Checkbox defaultChecked checked={companycheck}  onClick={()=>{
+                    <Grid xs={12}>  <FormControlLabel control={<Checkbox defaultChecked checked={companycheck} onClick={() => {
                         console.log("he");
                         setcompanycheck(!companycheck)
-                    }}/>} label="Are you a company?" />
+                    }} />} label="Are you a company?" />
                     </Grid>
                     {
-                       companycheck&& <>
-                        <Grid xs={12}><TextField fullWidth id="outlined-basic" label="Company name" placeholder='Name text' variant="outlined" />
-                    </Grid>
-                    <Grid xs={12}><TextField fullWidth id="outlined-basic" label="GSTINinfo" placeholder='Name text' variant="outlined" />
-                    </Grid>
-                    <Grid xs={12}>
-                    <Textarea minRows={2} id="outlined-basic" label="Billing address" placeholder='Billing address' variant="outlined"/>                    </Grid>
-                    <Grid xs={12}><TextField fullWidth id="outlined-basic" label="Zip code" placeholder='Name text' variant="outlined" />
-                    </Grid>
-                    <Grid xs={12}><TextField fullWidth id="outlined-basic" label="Billing email" placeholder='Name text' type='email' variant="outlined" />
-                    </Grid>
-                        
-                        
+                        companycheck && <>
+                            <Grid xs={12}><TextField fullWidth id="outlined-basic" label="Company name" placeholder='Name text' variant="outlined" />
+                            </Grid>
+                            <Grid xs={12}><TextField fullWidth id="outlined-basic" label="GSTINinfo" placeholder='Name text' variant="outlined" />
+                            </Grid>
+                            <Grid xs={12}>
+                                <Textarea minRows={2} id="outlined-basic" label="Billing address" placeholder='Billing address' variant="outlined" />                    </Grid>
+                            <Grid xs={12}><TextField fullWidth id="outlined-basic" label="Zip code" placeholder='Name text' variant="outlined" />
+                            </Grid>
+                            <Grid xs={12}><TextField fullWidth id="outlined-basic" label="Billing email" placeholder='Name text' type='email' variant="outlined" />
+                            </Grid>
+
+
                         </>
                     }
                 </Grid>
             </div>
-                <Divider style={{ margin: '0 57px', height:companycheck?"725px":'360px', border: ' 1px solid #E0E0E0' }} ></Divider>
+                <Divider style={{ margin: '0 57px', height: companycheck ? "725px" : '360px', border: ' 1px solid #E0E0E0' }} ></Divider>
                 <div className="right" style={{ width: "362px" }}>
                     <Grid container xs={12} rowGap={3}>
                         <Grid sx={12}> Order details</Grid>
@@ -110,8 +111,8 @@ function Paymentpage() {
                         <Grid xs={12}><div style={{ fontSize: '10px', fontWeight: '400', color: '#828282', display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}><LockIcon fontSize='small' style={{ marginRight: '10px', width: '15px' }}></LockIcon> Secure payment with SSL Encryptioninfo</div>
                             <div style={{ fontSize: '10px', fontWeight: '400', color: '#828282' }}>Having trouble with your payment?<a style={{ fontSize: '10px', fontWeight: '400', color: '#828282' }} href="#"> Please check</a></div></Grid>
                     </Grid>
-                </div> 
-               
+                </div>
+
                 <Divider style={{ margin: '0 57px', height: ' 360px', border: ' 1px solid #E0E0E0' }} ></Divider>
 
                 <div className="middle" style={{ width: "362px" }}>
@@ -123,7 +124,7 @@ function Paymentpage() {
                         <Grid xs={12} display={"flex"} justifyContent={"space-between"}><span>VAT/GST/Sales taxes (18%)</span> <span>18.00 INR</span></Grid>
                         <Grid xs={12}> <Divider></Divider></Grid>
 
-                        <Grid xs={12} display={"flex"} justifyContent={"space-between"}><span style={{ fontSize: '16px', fontWeight: '600',  }}>Total</span> <span style={{ fontSize: '16px', fontWeight: '600' }}>118.00 INR</span></Grid>
+                        <Grid xs={12} display={"flex"} justifyContent={"space-between"}><span style={{ fontSize: '16px', fontWeight: '600', }}>Total</span> <span style={{ fontSize: '16px', fontWeight: '600' }}>118.00 INR</span></Grid>
 
                         <Grid xs={12}>   <Accordion sx={{ border: '0 solid white', boxshadow: '0 0 0 whhite' }}>
                             <AccordionSummary
@@ -142,14 +143,14 @@ function Paymentpage() {
                                 </Grid>
                             </AccordionDetails>
                         </Accordion></Grid>
-                        <Grid xs={12}> <Button fullWidth     variant='contained' style={{fontSize:'14px',fontWeight:'600'}}>Confirm and pay</Button></Grid>
+                        <Grid xs={12}> <Button fullWidth variant='contained' style={{ fontSize: '14px', fontWeight: '600' }}>Confirm and pay</Button></Grid>
                         <Grid xs={12}><div style={{ fontSize: '10px', fontWeight: '400', color: '#828282', display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}><LockIcon fontSize='small' style={{ marginRight: '10px', width: '15px' }}></LockIcon> Secure payment with SSL Encryptioninfo</div>
                             <div style={{ fontSize: '10px', fontWeight: '400', color: '#828282' }}>Having trouble with your payment?<a style={{ fontSize: '10px', fontWeight: '400', color: '#828282' }} href="#"> Please check</a></div></Grid>
                     </Grid>
                 </div>
-                
+
             </div>
-        </div>
+        </div></>
     );
 }
 
